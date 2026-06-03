@@ -1,0 +1,485 @@
+
+/* ================================================= */
+/* IMPORTACIÓN DE FUENTES WEB (Google Fonts)         */
+/* ================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700;900&display=swap');
+
+/* ================================================= */
+/* VARIABLES DE COLOR Y ACCESIBILIDAD                */
+/* ================================================= */
+:root {
+    --bg-main: #F0F8FF; /* Azul muy suave */
+    --text-main: #2C3E50;
+    --header-bg: #FFB7B2; /* Pastel cálido */
+    --nav-bg: #E2F0CB; /* Verde suave */
+    --nav-hover: #C7E89A;
+    --primary-btn: #FFDAC1; /* Naranja suave */
+    --primary-btn-hover: #FFC099;
+    --secondary-btn: #C7CEEA; /* Morado suave */
+    --secondary-btn-hover: #A5AFD7;
+    --card-bg: #FFFFFF;
+    --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    --border-rad: 25px; /* Bordes muy redondeados para niños */
+}
+
+/* ================================================= */
+/* RESET GENERAL                  */
+/* ================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 18px;
+    background-image: radial-gradient(#FFDAC1 2px, transparent 2px);
+    background-size: 40px 40px; /* Fondo con puntitos sutiles */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fredoka', sans-serif;
+    color: #4A4E69;
+    letter-spacing: 1px;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================================= */
+/* HEADER                        */
+/* ================================================= */
+header {
+    background-color: var(--header-bg);
+    border-bottom: 6px solid #FF9A9E;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.header-top h1 {
+    font-size: 48px;
+    color: #FFF;
+    text-shadow: 2px 2px 0px #FF9A9E, -2px -2px 0px #FF9A9E, 4px 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+}
+
+.header-top p {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4A4E69;
+}
+
+/* ================================================= */
+/* LOGO                           */
+/* ================================================= */
+.logo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #FFF;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ================================================= */
+/* MENU                           */
+/* ================================================= */
+nav {
+    background-color: var(--nav-bg);
+    border-bottom: 4px solid var(--nav-hover);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #4A4E69;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FFF;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================================================= */
+/* SUBMENU                         */
+/* ================================================= */
+.dropdown ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFF;
+    min-width: 220px;
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    padding: 10px;
+    z-index: 999;
+}
+
+.dropdown:hover ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dropdown ul li a {
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.dropdown ul li a:hover {
+    background-color: var(--bg-main);
+}
+
+/* ================================================= */
+/* CONTENIDO & ASIDE               */
+/* ================================================= */
+.content {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section {
+    flex: 3;
+}
+
+section article {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-rad);
+    box-shadow: var(--shadow);
+    border: 3px solid #FFF;
+}
+
+aside {
+    flex: 1;
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: var(--border-rad);
+    box-shadow: var(--shadow);
+    height: fit-content;
+    border: 3px dashed #FFB7B2;
+}
+
+aside iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+/* ================================================= */
+/* CARRUSEL                        */
+/* ================================================= */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-rad);
+    border: 6px solid #FFF;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.carousel button {
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--secondary-btn);
+    color: #FFF;
+    box-shadow: 0 4px 0px #A5AFD7;
+    transition: 0.2s;
+}
+
+.carousel button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* ================================================= */
+/* FORMULARIOS                     */
+/* ================================================= */
+.form-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-rad);
+    box-shadow: var(--shadow);
+    border: 4px solid #FFF;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #FF9A9E;
+    margin-bottom: 30px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #E2E8F0;
+    border-radius: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    background-color: #F8FAFC;
+    transition: 0.3s;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: #FFB7B2;
+    background-color: #FFF;
+    box-shadow: 0 0 0 4px rgba(255, 183, 178, 0.2);
+}
+
+.form-container button {
+    width: 100%;
+    background-color: var(--primary-btn);
+    color: #4A4E69;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 0px var(--primary-btn-hover);
+    transition: 0.2s;
+}
+
+.form-container button:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+/* ================================================= */
+/* TABLAS ADMINISTRADOR               */
+/* ================================================= */
+.tabla-emotikids {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.tabla-emotikids th {
+    background-color: #A5AFD7;
+    color: #FFF;
+    padding: 15px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+}
+
+.tabla-emotikids td {
+    padding: 15px;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEF2F6;
+    text-align: center;
+}
+
+/* ================================================= */
+/* BOTONES GENERALES (ACCION Y VOLVER)        */
+/* ================================================= */
+.btn-accion, .btn-volver {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-accion {
+    background-color: #FFDAC1;
+    color: #4A4E69;
+    box-shadow: 0 4px 0px #FFC099;
+}
+
+.btn-volver {
+    background-color: #C7CEEA;
+    color: #FFF;
+    box-shadow: 0 4px 0px #A5AFD7;
+    margin-top: 20px;
+}
+
+.btn-accion:active, .btn-volver:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* ================================================= */
+/* TARJETAS DE ACTIVIDADES             */
+/* ================================================= */
+.contenedor-actividades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card-actividad {
+    width: 260px;
+    padding: 30px 20px;
+    background-color: #FFF;
+    border-radius: var(--border-rad);
+    text-align: center;
+    text-decoration: none;
+    color: #4A4E69;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    box-shadow: var(--shadow);
+    border: 4px solid var(--nav-bg);
+    transition: all 0.3s ease;
+}
+
+.card-actividad:hover {
+    transform: translateY(-10px) scale(1.05);
+    background-color: var(--nav-bg);
+    border-color: var(--nav-hover);
+}
+
+/* ================================================= */
+/* FOOTER                        */
+/* ================================================= */
+footer {
+    background-color: var(--header-bg);
+    text-align: center;
+    padding: 30px;
+    margin-top: auto; /* Empuja el footer al fondo */
+    border-top: 6px solid #FF9A9E;
+}
+
+.redes img {
+    width: 50px;
+    margin: 0 15px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #FFF;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.redes img:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+footer p {
+    color: #FFF;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ================================================= */
+/* MODO OSCURO MEJORADO (A PRUEBA DE ESTILOS EN LÍNEA) */
+/* ================================================= */
+[data-theme="dark"], 
+[data-theme="dark"] body, 
+[data-theme="dark"] main {
+    background-color: #121212 !important;
+    background-image: radial-gradient(#333 2px, transparent 2px) !important;
+    color: #E0E0E0 !important;
+}
+
+/* Forzar color de textos en modo oscuro */
+[data-theme="dark"] h1, [data-theme="dark"] h2, 
+[data-theme="dark"] h3, [data-theme="dark"] p, 
+[data-theme="dark"] label, [data-theme="dark"] span,
+[data-theme="dark"] div {
+    color: #E0E0E0 !important;
+    text-shadow: none !important;
+}
+
+/* Forzar fondos oscuros en contenedores, tarjetas y tablas */
+[data-theme="dark"] .form-container,
+[data-theme="dark"] .card-actividad,
+[data-theme="dark"] .fila-superior,
+[data-theme="dark"] .pregunta-caja,
+[data-theme="dark"] .reproductor-suno,
+[data-theme="dark"] .emocion-3d-container,
+[data-theme="dark"] aside,
+[data-theme="dark"] article,
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td,
+[data-theme="dark"] div[style*="background-color"] {
+    background-color: #1E1E24 !important;
+    background: #1E1E24 !important; /* Mata los gradientes */
+    border-color: #4A4E69 !important;
+}
+
+/* Inputs y Selects */
+[data-theme="dark"] input, 
+[data-theme="dark"] select {
+    background-color: #2B2D42 !important;
+    color: #FFF !important;
+    border: 2px solid #4A4E69 !important;
+}
