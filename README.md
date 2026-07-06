@@ -4,7 +4,7 @@
 > Proyecto alineado con el **ODS 4: Educación de Calidad** 🎯
 
 ## 📖 Sobre el Proyecto
-**EmotiKids** es una plataforma web educativa e interactiva diseñada para enseñar inteligencia emocional a niños mediante el uso de tecnología inmersiva. A través de  entornos de Realidad Virtual (WebVR) y gamificación, los niños aprenden a identificar y gestionar sus emociones de manera lúdica, segura y accesible.
+**EmotiKids** es una plataforma web educativa e interactiva diseñada para enseñar inteligencia emocional a niños de 3 a 8 años mediante el uso de tecnología inmersiva. A través de  entornos de Realidad Virtual (WebVR) y gamificación, los niños aprenden a identificar y gestionar sus emociones de manera lúdica, segura y accesible.
 
 ## ✨ Características Principales
 * **🕶️ Entornos Inmersivos (WebVR):** Exploración de escenarios 360° para atrapar emociones utilizando A-Frame.
